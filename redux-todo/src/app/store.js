@@ -1,6 +1,5 @@
 import {applyMiddleware, configureStore} from '@reduxjs/toolkit';
 import rootReducer from '../reducer.js';
-import { print1,print2,print3 } from '../exampleAddons/middleware.js';
 
 let preloadedState;
 const persistedTodoString=localStorage.getItem('todos');
@@ -11,9 +10,9 @@ if(persistedTodoString){
 }
 }
 
-const middlewareEnhancer=applyMiddleware(print1,print2,print3);
 
-export const store=configureStore({
+ const store=configureStore({
+    preloadedState,
     reducer:rootReducer,
-    middleware:[middlewareEnhancer]
 })
+export default store;

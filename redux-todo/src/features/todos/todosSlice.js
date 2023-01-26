@@ -1,4 +1,4 @@
-const initialState = {
+const initialState ={
     todos:[{
     id: 0,
     text: 'First Post!',
@@ -18,11 +18,7 @@ const initialState = {
     priority:'yellow'
 }
 ],
-    // filter:{
-    //     status:'All',
-    //     priority:['red','green','yellow']
-    // }
-};
+}
 
 function nextTodoId(todos) {
     const maxId = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
