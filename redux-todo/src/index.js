@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom'
 import './index.css'
 import App from './App'
 import { Provider } from 'react-redux'
-import store from './app/store'
+import {store} from './app/store'
 import './api/server'
+
+store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+
 
 ReactDOM.render(
   <Provider store={store}>
