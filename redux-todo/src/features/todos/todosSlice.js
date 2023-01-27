@@ -52,3 +52,7 @@ export default function todoReducers(state=initialState,action){
             return state;
     }
 }
+export async function fetchTodos(dispatch, getState) {
+    const response = await client.get('/fakeApi/todos')
+    dispatch({ type: 'todos/todosLoaded', payload: response.todos })
+  }
